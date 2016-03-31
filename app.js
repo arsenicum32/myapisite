@@ -25,7 +25,7 @@ app.get('/jade/:id' , function( req, res, next){
   var fin = ( req.query || { title: 'Hey', message: 'Hello there!'});
   fin['url'] = url;
   res.render( req.params.id , fin );
-})
+});
 
 app.get('/', function (req, res) {
   res.send(app.get('trust proxy'));
