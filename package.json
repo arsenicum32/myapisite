@@ -1,0 +1,19 @@
+{
+  "name": "myapisite",
+  "version": "1.0.0",
+  "description": "for arsenicum32 api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "arsenicum32",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "express-stylus": "^0.1.0",
+    "jade": "^1.11.0",
+    "nib": "^1.1.0"
+  }
+}
