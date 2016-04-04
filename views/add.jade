@@ -1,0 +1,13 @@
+html
+  head
+    title!= title
+    link(rel='stylesheet', href='#{url}/style.css')
+  body
+    form(action="make",method="post")
+      p id
+      input(name="id")
+      p page
+      input(name="page")
+      p data
+      textarea(name="data")
+      button(type="sumbit") create/update

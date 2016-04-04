@@ -10,10 +10,12 @@
   "author": "arsenicum32",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "cors": "^2.7.1",
     "express": "^4.13.4",
     "express-stylus": "^0.1.0",
     "jade": "^1.11.0",
+    "mongoose": "^4.4.10",
     "nib": "^1.1.0"
   }
 }
