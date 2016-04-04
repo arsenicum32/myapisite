@@ -1,5 +1,5 @@
 var express = require('express');
-var stylus = require('express-stylus');
+//var stylus = require('express-stylus');
 var cors = require('cors');
 var nib = require('nib');
 var mongoose = require('mongoose');
@@ -11,8 +11,10 @@ var publicDir = join(__dirname, '/public');
 
 var app = express();
 
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+app.use(cors());
+
+app.use( bodyParser.json() );
+app.use(bodyParser.urlencoded({
   extended: true
 }));
 
@@ -34,14 +36,15 @@ var Pages = mongoose.model('Pages', new mongoose.Schema({
 //   console.log(obj.id);
 // })
 
+///////////////////// uncoment for generation
+// app.use(stylus({
+//   src: publicDir,
+//   use: [nib()],
+//   import: ['nib']
+// }));
+/////////////////////
 
-app.use(stylus({
-  src: publicDir,
-  use: [nib()],
-  import: ['nib']
-}));
 app.use(express.static(publicDir));
-app.use(cors());
 app.disable('x-powered-by');
 app.set('view engine', 'jade');
 
