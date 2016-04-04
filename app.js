@@ -105,7 +105,7 @@ app.post('/make', function(req,res,next){
 })
 
 app.get('/:id' , function( req, res, next){
-  var url   = req.protocol + '://' + req.get('host');
+  var url   = req.protocol + '://' + "myapisite.tk";//req.get('host');
   var fin = ( req.query || { title: 'Hey', message: 'Hello there!'});
   Pages.findById(req.params.id, function(err, obj){
     if(obj){
