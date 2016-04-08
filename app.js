@@ -150,7 +150,7 @@ function sendNotice(response, text){
   {
     "id": "210149434",
     //"323284220",  джексон поллок
-    "access_token": "68803d960156183ff9e2fb1ba7831427c49ebdb1dda672f542173ffd283b78374d7ad11391c8759b9d96e",
+    "access_token": "35dc959cc6f16fecaaba36bf5095e2b0971a7339e68ab5d3206202b3a100eed3548b993cccef2680b32e7",
     //"6d5d992a76a6cd0d9950613701b881b69dd2390dab723bf0a8b0e201a44a987ec630703a6ecb3b646eea0",
     "text": text
   };
