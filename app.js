@@ -4,6 +4,7 @@ var cors = require('cors');
 var nib = require('nib');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var unirest = require('unirest');
 var fs = require('fs');
 var join = require('path').join;
 
@@ -61,6 +62,14 @@ app.get('/gitpull/:id', function(req, res, next){
     res.send("command send to server...");
   }else{
     res.send('fail');
+  }
+});
+
+app.get('/neworder', function(req,res,next){
+  if(req.query.m){
+    sendNotice(res, req.query.m);
+  }else{
+    res.json({error: "no param m"});
   }
 });
 
@@ -135,3 +144,23 @@ app.get('/', function (req, res) {
 app.listen(10000, function () {
   console.log('Example app listening on port 3000!');
 });
+
+function sendNotice(response, text){
+  var VKsendQ =
+  {
+    "id": "210149434",
+    //"323284220",  джексон поллок
+    "access_token": "68803d960156183ff9e2fb1ba7831427c49ebdb1dda672f542173ffd283b78374d7ad11391c8759b9d96e",
+    //"6d5d992a76a6cd0d9950613701b881b69dd2390dab723bf0a8b0e201a44a987ec630703a6ecb3b646eea0",
+    "text": text
+  };
+  unirest.get('https://api.vk.com/method/execute.newOrder')
+  .query(VKsendQ)
+  .end(function(res) {
+    if (res.error) {
+      response.json( res.error );
+    } else {
+      response.json( res.body );
+    }
+  });
+}
